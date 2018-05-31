@@ -13,14 +13,19 @@
   <servlet>
     	<servlet-name>Jersey</servlet-name>
     	<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+<!--     	<init-param> -->
+<!--     		<param-name>jersey.config-server-provider.packages</param-name> -->
+<!--     		<param-value>co.edu.eafit.cec.dipl.rs</param-value> -->
+<!--     	</init-param> -->
     	<init-param>
-    		<param-name>jersey.config-server-provider.packages</param-name>
-    		<param-value>co.edu.eafit.cec.dipl.rs</param-value>
+    		<param-name>javax.ws.rs.Application</param-name>
+    		<param-value>co.edu.eafit.cec.dipl.rs.ServiceProvider</param-value>
     	</init-param>
+    	<load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
     	<servlet-name>Jersey</servlet-name>
-    	<url-pattern>/api</url-pattern>
+    	<url-pattern>/api/*</url-pattern>
     </servlet-mapping>
     
 </web-app>
